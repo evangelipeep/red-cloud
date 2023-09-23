@@ -1,7 +1,9 @@
 import { BsHouseFill, BsBellFill } from "react-icons/bs"
 import { FaUser } from "react-icons/fa"
+import { BiSolidLogOutCircle } from "react-icons/bi"
 import { SidebarLogo } from "./SidebarLogo"
 import { SidebarItems } from "./SidebarItems"
+import { SidebarPostButton } from "./SidebarPostButton"
 
 export const Sidebar = () => {
   const items = [
@@ -22,9 +24,9 @@ export const Sidebar = () => {
     },
   ]
   return (
-    <div className="col-span-1 h-full pr-3 md:pr-5">
+    <div className="col-span-1 h-full pr-5 md:pr-7">
       <div className="flex flex-col items-end">
-        <div className="space-y-2 lg:w-[320px]">
+        <div className="space-y-2 lg:w-[220px]">
           <SidebarLogo />
           {items.map((item) => (
             <SidebarItems
@@ -34,6 +36,12 @@ export const Sidebar = () => {
               icon={item.icon}
             />
           ))}
+          <SidebarItems
+            onClick={() => {}}
+            icon={BiSolidLogOutCircle}
+            label="Logout"
+          />
+          <SidebarPostButton />
         </div>
       </div>
     </div>

@@ -10,6 +10,9 @@ const config: Config = {
     colors: {
       silver: "#e0e0e0",
       red: "#b71c1c",
+      white: "#fff",
+      black: "#262626",
+      transparent: "transparent",
     },
     extend: {
       backgroundImage: {
