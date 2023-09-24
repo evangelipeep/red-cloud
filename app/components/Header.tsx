@@ -16,7 +16,7 @@ export const Header: React.FC<HeaderProps> = ({ label, showBackArrow }) => {
   }, [router])
 
   return (
-    <div className="border-b-[2px] border-red p-5">
+    <div className="border-b-[2px] p-5">
       <div className="flex flex-row items-center gap-2">
         {showBackArrow && (
           <BiArrowBack
@@ -25,7 +25,7 @@ export const Header: React.FC<HeaderProps> = ({ label, showBackArrow }) => {
             className="cursor-pointer hover:opasity-80 transition "
           />
         )}
-        <h1 className="text-xl font-senibold">{label}</h1>
+        <h1 className="text-xl font-senibold text-red">{label}</h1>
       </div>
     </div>
   )

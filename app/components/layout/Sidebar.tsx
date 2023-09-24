@@ -24,7 +24,7 @@ export const Sidebar = () => {
     },
   ]
   return (
-    <div className="col-span-1 h-full pr-5 md:pr-7">
+    <div className="col-span-1 h-full pt-2 pr-5 md:pr-7">
       <div className="flex flex-col items-end">
         <div className="space-y-2 lg:w-[220px]">
           <SidebarLogo />
