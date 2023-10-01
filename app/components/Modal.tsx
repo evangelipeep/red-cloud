@@ -64,18 +64,17 @@ export const Modal: React.FC<ModalProps> = ({
           {/*content*/}
           <div
             className="
-        h-full
-        lg:h-auto
-        border-0 
-        rounded-lg 
-        shadow-lg 
-        relative 
-        flex 
-        flex-col 
-        w-full 
-        bg-black 
-        outline-none 
-        focus:outline-none
+            h-full
+            lg:h-auto
+            border-0 
+            rounded-lg 
+            shadow-lg 
+            relative 
+            flex 
+            flex-col w-full
+            bg-black 
+            outline-none 
+            focus:outline-none
         ">
             {/*header*/}
             <div
@@ -83,8 +82,7 @@ export const Modal: React.FC<ModalProps> = ({
           flex 
           items-center 
           justify-between 
-          p-10 
-          rounded-t
+          p-10 rounded-t
           ">
               <h3 className="text-3xl font-semibold text-white">{title}</h3>
               <button

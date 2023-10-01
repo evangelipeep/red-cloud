@@ -2,16 +2,27 @@
 
 import { useCallback, useState } from "react"
 import useLoginModal from "@/app/hooks/useLoginModal"
+import useRegisterModal from "@/app/hooks/useRegisterModal"
 
 import Input from "../Input"
 import { Modal } from "../Modal"
 
 export const LoginModal = () => {
   const loginModal = useLoginModal()
+  const registerModal = useRegisterModal()
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+
+  const onToggle = useCallback(() => {
+    if (isLoading) {
+      return
+    }
+
+    registerModal.onOpen()
+    loginModal.onClose()
+  }, [loginModal, registerModal, isLoading])
 
   const onSubmit = useCallback(async () => {
     try {
@@ -44,6 +55,24 @@ export const LoginModal = () => {
     </div>
   )
 
+  const footerContent = (
+    <div className="text-silver text-center mt-4">
+      <p>
+        First time using RedCloud?
+        <span
+          onClick={onToggle}
+          className="
+          text-red 
+          cursor-pointer 
+          hover:underline
+        ">
+          {" "}
+          Create an account
+        </span>
+      </p>
+    </div>
+  )
+
   return (
     <Modal
       disabled={isLoading}
@@ -53,6 +82,7 @@ export const LoginModal = () => {
       onClose={loginModal.onClose}
       onSubmit={onSubmit}
       body={bodyContent}
+      footer={footerContent}
     />
   )
 }

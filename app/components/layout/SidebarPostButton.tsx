@@ -1,12 +1,19 @@
 "use client"
 import { useRouter } from "next/navigation"
-import React from "react"
+import React, { useCallback } from "react"
 import { FaFeatherAlt } from "react-icons/fa"
+
+import useLoginModal from "@/app/hooks/useLoginModal"
 
 export const SidebarPostButton = () => {
   const router = useRouter()
+  const loginModal = useLoginModal()
+
+  const onClick = useCallback(() => {
+    loginModal.onOpen()
+  }, [loginModal])
   return (
-    <div onClick={() => router.push("/")}>
+    <div onClick={onClick}>
       <div className="mt-6 lg:hidden h-14 w-14 p-4 flex items-center rounded-full justify-center bg-red hover:bg-opacity-80 transition cursor-pointer">
         <FaFeatherAlt size={28} color="white" />
       </div>
